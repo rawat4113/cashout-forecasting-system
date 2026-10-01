@@ -1,0 +1,13 @@
+{
+  "test_days": 109,
+  "test_positive_rate": 0.21562796583359697,
+  "reference_k": 10,
+  "ours_precision_at_k": 0.638532110091743,
+  "recent7_precision_at_k": 0.581651376146789,
+  "random_precision_at_k": 0.22018348623853212,
+  "ours_event_coverage_at_k": 0.35449739074201225,
+  "recent7_event_coverage_at_k": 0.32808475011000576,
+  "forecast_mean_lead_time_h": 11.187952178030304,
+  "reactive_mean_lag_h": 19.847111485295557,
+  "reactive_median_lag_h": 14.104562260035832
+}

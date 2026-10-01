@@ -1,0 +1,146 @@
+cell_id,city,state,lat,lon,tier,atm_count
+0,Mumbai,Maharashtra,19.08971,72.8312,1,75
+1,Mumbai,Maharashtra,18.9882,72.8194,1,71
+2,Mumbai,Maharashtra,19.07524,72.83961,1,62
+3,Mumbai,Maharashtra,19.07897,72.92873,1,64
+4,Mumbai,Maharashtra,19.09259,72.83485,1,73
+5,Mumbai,Maharashtra,19.06768,72.84736,1,72
+6,Mumbai,Maharashtra,19.09995,72.89444,1,56
+7,Mumbai,Maharashtra,19.17237,72.85971,1,61
+8,Delhi,Delhi,28.64172,77.2598,1,55
+9,Delhi,Delhi,28.5769,77.23828,1,64
+10,Delhi,Delhi,28.5613,77.23344,1,62
+11,Delhi,Delhi,28.65321,77.21906,1,57
+12,Delhi,Delhi,28.62701,77.23741,1,70
+13,Delhi,Delhi,28.59283,77.18025,1,55
+14,Delhi,Delhi,28.57504,77.25257,1,66
+15,Delhi,Delhi,28.62132,77.23538,1,66
+16,Bengaluru,Karnataka,12.95631,77.57319,1,58
+17,Bengaluru,Karnataka,12.91459,77.543,1,49
+18,Bengaluru,Karnataka,12.97841,77.62507,1,66
+19,Bengaluru,Karnataka,13.00015,77.58008,1,73
+20,Bengaluru,Karnataka,12.95566,77.57682,1,70
+21,Bengaluru,Karnataka,12.95088,77.59456,1,56
+22,Bengaluru,Karnataka,13.00194,77.58957,1,60
+23,Bengaluru,Karnataka,12.89607,77.52888,1,77
+24,Hyderabad,Telangana,17.36798,78.54547,1,72
+25,Hyderabad,Telangana,17.34299,78.47776,1,53
+26,Hyderabad,Telangana,17.42281,78.40927,1,60
+27,Hyderabad,Telangana,17.35826,78.42193,1,71
+28,Hyderabad,Telangana,17.39547,78.48798,1,67
+29,Hyderabad,Telangana,17.33894,78.49507,1,46
+30,Hyderabad,Telangana,17.42258,78.50306,1,53
+31,Hyderabad,Telangana,17.35621,78.4453,1,67
+32,Kolkata,West Bengal,22.60158,88.354,1,84
+33,Kolkata,West Bengal,22.58711,88.40172,1,65
+34,Kolkata,West Bengal,22.59165,88.31947,1,64
+35,Kolkata,West Bengal,22.53642,88.34531,1,64
+36,Kolkata,West Bengal,22.62097,88.37107,1,55
+37,Kolkata,West Bengal,22.49764,88.34212,1,60
+38,Kolkata,West Bengal,22.65256,88.36986,1,54
+39,Kolkata,West Bengal,22.51968,88.32057,1,66
+40,Chennai,Tamil Nadu,13.04604,80.30773,1,61
+41,Chennai,Tamil Nadu,13.10032,80.26295,1,56
+42,Chennai,Tamil Nadu,13.02785,80.21249,1,76
+43,Chennai,Tamil Nadu,13.0902,80.26466,1,65
+44,Chennai,Tamil Nadu,13.09287,80.25151,1,62
+45,Chennai,Tamil Nadu,13.15211,80.27825,1,80
+46,Chennai,Tamil Nadu,13.15729,80.34756,1,56
+47,Chennai,Tamil Nadu,13.14876,80.22018,1,60
+48,Pune,Maharashtra,18.50224,73.85677,1,55
+49,Pune,Maharashtra,18.58334,73.86108,1,69
+50,Pune,Maharashtra,18.51781,73.81905,1,67
+51,Pune,Maharashtra,18.50496,73.89822,1,71
+52,Pune,Maharashtra,18.49821,73.84225,1,65
+53,Pune,Maharashtra,18.58018,73.85005,1,79
+54,Pune,Maharashtra,18.53091,73.86495,1,53
+55,Pune,Maharashtra,18.53027,73.97029,1,67
+56,Ahmedabad,Gujarat,23.01007,72.50615,1,72
+57,Ahmedabad,Gujarat,23.07726,72.53919,1,72
+58,Ahmedabad,Gujarat,23.01568,72.52419,1,75
+59,Ahmedabad,Gujarat,22.99918,72.53254,1,68
+60,Ahmedabad,Gujarat,22.95698,72.66782,1,59
+61,Ahmedabad,Gujarat,23.10566,72.70273,1,50
+62,Ahmedabad,Gujarat,23.03837,72.64979,1,60
+63,Ahmedabad,Gujarat,23.05798,72.59156,1,60
+64,Jaipur,Rajasthan,26.85013,75.77628,2,27
+65,Jaipur,Rajasthan,26.88701,75.80822,2,43
+66,Jaipur,Rajasthan,26.92783,75.78939,2,26
+67,Jaipur,Rajasthan,27.03863,75.88119,2,41
+68,Jaipur,Rajasthan,26.87766,75.73694,2,47
+69,Lucknow,Uttar Pradesh,26.86861,80.86849,2,45
+70,Lucknow,Uttar Pradesh,26.83385,80.94234,2,41
+71,Lucknow,Uttar Pradesh,26.91322,80.8315,2,38
+72,Lucknow,Uttar Pradesh,26.86032,80.93026,2,40
+73,Lucknow,Uttar Pradesh,26.92473,80.87798,2,38
+74,Surat,Gujarat,21.16724,72.78362,2,50
+75,Surat,Gujarat,21.22298,72.85076,2,47
+76,Surat,Gujarat,21.20726,72.81765,2,42
+77,Surat,Gujarat,21.21453,72.77798,2,43
+78,Surat,Gujarat,21.17317,72.88371,2,31
+79,Nagpur,Maharashtra,21.17888,79.01726,2,46
+80,Nagpur,Maharashtra,21.17469,79.05655,2,53
+81,Nagpur,Maharashtra,21.09125,79.0578,2,42
+82,Nagpur,Maharashtra,21.19799,79.11539,2,39
+83,Nagpur,Maharashtra,21.14924,79.10663,2,40
+84,Patna,Bihar,25.5674,85.16459,2,32
+85,Patna,Bihar,25.61058,85.1761,2,45
+86,Patna,Bihar,25.64208,85.14848,2,45
+87,Patna,Bihar,25.55515,85.13136,2,33
+88,Patna,Bihar,25.63899,85.09037,2,38
+89,Bhopal,Madhya Pradesh,23.22554,77.376,2,45
+90,Bhopal,Madhya Pradesh,23.25951,77.4728,2,32
+91,Bhopal,Madhya Pradesh,23.24977,77.32284,2,41
+92,Bhopal,Madhya Pradesh,23.26385,77.47193,2,46
+93,Bhopal,Madhya Pradesh,23.18694,77.37726,2,45
+94,Indore,Madhya Pradesh,22.61605,75.86045,2,36
+95,Indore,Madhya Pradesh,22.75159,75.86422,2,33
+96,Indore,Madhya Pradesh,22.75692,75.84028,2,43
+97,Indore,Madhya Pradesh,22.71471,75.89533,2,42
+98,Indore,Madhya Pradesh,22.6533,75.75299,2,51
+99,Vadodara,Gujarat,22.35601,73.24075,2,25
+100,Vadodara,Gujarat,22.36791,73.18515,2,47
+101,Vadodara,Gujarat,22.24038,73.14103,2,36
+102,Vadodara,Gujarat,22.38443,73.1188,2,44
+103,Vadodara,Gujarat,22.27977,73.15697,2,45
+104,Gurugram,Haryana,28.47379,77.04329,2,53
+105,Gurugram,Haryana,28.39254,77.07503,2,33
+106,Gurugram,Haryana,28.47469,77.1148,2,32
+107,Gurugram,Haryana,28.46621,77.07543,2,39
+108,Gurugram,Haryana,28.45784,77.04113,2,38
+109,Noida,Uttar Pradesh,28.44172,77.34072,2,39
+110,Noida,Uttar Pradesh,28.49171,77.40665,2,44
+111,Noida,Uttar Pradesh,28.54334,77.41886,2,45
+112,Noida,Uttar Pradesh,28.48361,77.39129,2,37
+113,Noida,Uttar Pradesh,28.59949,77.39512,2,50
+114,Kochi,Kerala,9.92333,76.23192,2,37
+115,Kochi,Kerala,9.96095,76.31584,2,27
+116,Kochi,Kerala,9.95143,76.25311,2,37
+117,Kochi,Kerala,9.9159,76.17741,2,47
+118,Kochi,Kerala,9.97128,76.23462,2,32
+119,Ranchi,Jharkhand,23.31954,85.41892,2,45
+120,Ranchi,Jharkhand,23.36493,85.23976,2,38
+121,Ranchi,Jharkhand,23.34013,85.34559,2,40
+122,Ranchi,Jharkhand,23.31302,85.3504,2,33
+123,Ranchi,Jharkhand,23.32409,85.37548,2,45
+124,Nashik,Maharashtra,20.06841,73.77372,3,13
+125,Nashik,Maharashtra,20.02669,73.76576,3,24
+126,Nashik,Maharashtra,19.9626,73.71411,3,28
+127,Rajkot,Gujarat,22.29593,70.7906,3,27
+128,Rajkot,Gujarat,22.25862,70.83381,3,21
+129,Rajkot,Gujarat,22.32904,70.81534,3,28
+130,Guwahati,Assam,26.13018,91.70209,3,28
+131,Guwahati,Assam,26.104,91.73282,3,30
+132,Guwahati,Assam,26.10955,91.77651,3,19
+133,Bhubaneswar,Odisha,20.26662,85.84968,3,20
+134,Bhubaneswar,Odisha,20.29294,85.83679,3,26
+135,Bhubaneswar,Odisha,20.23053,85.88513,3,23
+136,Coimbatore,Tamil Nadu,11.03336,76.84755,3,28
+137,Coimbatore,Tamil Nadu,11.10688,76.90305,3,24
+138,Coimbatore,Tamil Nadu,11.0895,76.90099,3,20
+139,Visakhapatnam,Andhra Pradesh,17.61167,83.16035,3,27
+140,Visakhapatnam,Andhra Pradesh,17.72257,83.22887,3,27
+141,Visakhapatnam,Andhra Pradesh,17.65776,83.18935,3,30
+142,Chandigarh,Chandigarh,30.75316,76.70315,3,13
+143,Chandigarh,Chandigarh,30.74359,76.71493,3,26
+144,Chandigarh,Chandigarh,30.74387,76.75137,3,25

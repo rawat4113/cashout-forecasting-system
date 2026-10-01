@@ -1,0 +1,11 @@
+rank,cell_id,city,state,lat,lon,risk_score,risk_level,fraud_type,fraud_volume_7d,r3,r7,burst,atm_count
+1,18,Bengaluru,Karnataka,12.9784,77.6251,0.8317,HIGH,Investment / Trading Scam,5,14.0,19.0,4.413,66.0
+2,33,Kolkata,West Bengal,22.5871,88.4017,0.7484,HIGH,Digital Arrest Scam,2,5.0,8.0,1.3628,65.0
+3,53,Pune,Maharashtra,18.5802,73.85,0.7356,HIGH,Job / Task Fraud,2,4.0,7.0,1.0862,79.0
+4,11,Delhi,Delhi,28.6532,77.2191,0.6759,HIGH,UPI / Card Fraud,4,6.0,10.0,2.0449,57.0
+5,43,Chennai,Tamil Nadu,13.0902,80.2647,0.6058,HIGH,UPI / Card Fraud,2,4.0,5.0,3.0732,65.0
+6,81,Nagpur,Maharashtra,21.0912,79.0578,0.6031,HIGH,Investment / Trading Scam,6,3.0,16.0,0.8235,42.0
+7,50,Pune,Maharashtra,18.5178,73.819,0.5536,MEDIUM,UPI / Card Fraud,6,5.0,13.0,2.0811,67.0
+8,52,Pune,Maharashtra,18.4982,73.8423,0.5076,MEDIUM,KYC / OTP Fraud,4,4.0,15.0,1.575,65.0
+9,74,Surat,Gujarat,21.1672,72.7836,0.4975,MEDIUM,UPI / Card Fraud,4,3.0,7.0,2.5789,50.0
+10,46,Chennai,Tamil Nadu,13.1573,80.3476,0.4953,MEDIUM,UPI / Card Fraud,3,3.0,4.0,3.0625,56.0

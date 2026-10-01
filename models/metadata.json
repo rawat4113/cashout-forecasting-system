@@ -1,0 +1,37 @@
+{
+  "features": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag7",
+    "r3",
+    "r7",
+    "r14",
+    "r28",
+    "ewm",
+    "burst",
+    "days_since_last",
+    "active_days_14",
+    "hist_rate",
+    "amt7_log",
+    "hv7",
+    "nbr7",
+    "city7_others",
+    "nat_r7_share",
+    "dow",
+    "dom",
+    "month_end",
+    "t",
+    "lat",
+    "lon",
+    "atm_count",
+    "tier"
+  ],
+  "best_params": {
+    "max_iter": 100,
+    "max_depth": 5
+  },
+  "val_pr_auc": 0.48779910009397787,
+  "n_train_rows": 58435,
+  "seed": 42
+}
