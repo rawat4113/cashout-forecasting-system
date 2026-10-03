@@ -88,14 +88,15 @@ def build_arrays(events: pd.DataFrame, n_cells: int, start: pd.Timestamp, n_days
     return y_cnt, y_amt, o_cnt, o_amt, o_hv
 
 
-def build_panel(events: pd.DataFrame, cells: pd.DataFrame,
-                start: str = C.START_DATE, n_days: int = C.N_DAYS,
-                warmup: int = C.WARMUP_DAYS) -> pd.DataFrame:
-    """Return one row per (cell, day) with features + labels."""
-    start = pd.Timestamp(start)
-    n_cells = len(cells)
-    y_cnt, y_amt, o_cnt, o_amt, o_hv = build_arrays(events, n_cells, start, n_days)
+def features_from_arrays(o_cnt, o_amt, o_hv, cells: pd.DataFrame, start: pd.Timestamp, n_days: int,
+                         nbr: np.ndarray = None) -> dict:
+    """Feature dict (name -> (n_cells, n_days) array) from per-cell/day complaint arrays.
 
+    This is the SINGLE implementation of the feature logic. The batch trainer
+    (build_panel) and the real-time scorer (src/stream/online_store.py) both call it,
+    so training-time and serving-time features cannot drift apart.
+    """
+    n_cells = len(cells)
     f = {}
     for k in (1, 2, 3, 7):
         f[f"lag{k}"] = lag(o_cnt, k)
@@ -121,7 +122,8 @@ def build_panel(events: pd.DataFrame, cells: pd.DataFrame,
 
     # spill-over: nearest geographic neighbours, and the rest of the same city
     r7 = f["r7"]
-    nbr = nearest_neighbours(cells, C.KNN_NEIGHBOURS)
+    if nbr is None:
+        nbr = nearest_neighbours(cells, C.KNN_NEIGHBOURS)
     f["nbr7"] = r7[nbr].sum(axis=1)
     city_codes = cells["city"].astype("category").cat.codes.to_numpy()
     city_tot = np.zeros((city_codes.max() + 1, n_days))
@@ -140,6 +142,19 @@ def build_panel(events: pd.DataFrame, cells: pd.DataFrame,
         f[name] = np.tile(arr, (n_cells, 1)).astype(float)
     for name in ("lat", "lon", "atm_count", "tier"):
         f[name] = np.repeat(cells[name].to_numpy(float)[:, None], n_days, axis=1)
+    return f
+
+
+def build_panel(events: pd.DataFrame, cells: pd.DataFrame,
+                start: str = C.START_DATE, n_days: int = C.N_DAYS,
+                warmup: int = C.WARMUP_DAYS) -> pd.DataFrame:
+    """Return one row per (cell, day) with features + labels."""
+    start = pd.Timestamp(start)
+    n_cells = len(cells)
+    y_cnt, y_amt, o_cnt, o_amt, o_hv = build_arrays(events, n_cells, start, n_days)
+    f = features_from_arrays(o_cnt, o_amt, o_hv, cells, start, n_days)
+    days = np.arange(n_days)
+    dates = pd.date_range(start, periods=n_days)
 
     panel = pd.DataFrame({k: v.ravel() for k, v in f.items()})
     panel.insert(0, "cell_id", np.repeat(cells["cell_id"].to_numpy(), n_days))

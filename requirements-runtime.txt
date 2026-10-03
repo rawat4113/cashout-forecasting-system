@@ -1,0 +1,7 @@
+# Serving node (IBM Z / LinuxONE, s390x): numpy + pandas + FastAPI only. No scikit-learn, no joblib.
+# Plain "uvicorn" (not uvicorn[standard]) on purpose: the [standard] extras pull compiled packages
+# (uvloop, httptools) that may not ship s390x wheels. Verify wheel availability on your LPAR.
+numpy>=1.26
+pandas>=2.0
+fastapi>=0.110
+uvicorn>=0.29

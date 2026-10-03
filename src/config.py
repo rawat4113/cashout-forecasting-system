@@ -27,3 +27,9 @@ TOP_K_LIST = (5, 10, 20)          # number of cells an agency can realistically 
 ALERT_HOUR = 0                    # hour of day at which the daily forecast is issued
 RISK_HIGH = 0.60                  # probability thresholds for alert levels
 RISK_MEDIUM = 0.35
+
+# ---- real-time platform ----------------------------------------------------
+PORTABLE_MODEL_PATH = MODEL_DIR / "hgb_portable.npz"   # endian-explicit, numpy-only model for IBM Z (s390x)
+AUDIT_DIR = OUT_DIR / "audit"
+LIVE_DIR = OUT_DIR / "live"
+PROVISIONAL_MIN_COMPLAINTS = 1    # a cell needs at least this many complaints in the window to get a reason code

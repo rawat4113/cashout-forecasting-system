@@ -18,14 +18,7 @@ import pandas as pd
 from . import config as C
 from .common import load_data
 from .features import FEATURE_COLUMNS, build_panel
-
-
-def risk_level(p: float) -> str:
-    if p >= C.RISK_HIGH:
-        return "HIGH"
-    if p >= C.RISK_MEDIUM:
-        return "MEDIUM"
-    return "LOW"
+from .risk import risk_level  # noqa: F401  (re-exported)
 
 
 def _validate_date(date: pd.Timestamp) -> int:

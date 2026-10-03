@@ -1,6 +1,6 @@
-# Cash-Out Hotspot Forecasting – Predictive Analytics + API + Command Dashboard
+# Cash-Out Hotspot Forecasting → Real-Time Cybercrime Intelligence Platform (IBM Z / LinuxONE target)
 
-**IBM Z Datathon 2026 · Predict likely cash-withdrawal locations for cybercrime proceeds in advance**
+**IBM Z Datathon 2026 · Predict likely cash-withdrawal locations for cybercrime proceeds in advance — now as a streaming platform**
 
 This repository contains three connected layers:
 
@@ -47,7 +47,35 @@ streamlit run dashboard.py
 
 The dashboard opens in the browser and scores all ATM clusters for the selected forecast day, then applies the filters in the UI.
 
-## Architecture
+## v2: real-time platform (what changed)
+
+```text
+complaint events → validation → online feature store → portable model scorer → alert engine → API / Live Operations UI
+                                                                                   └→ hash-chained audit log
+```
+
+| New piece | Where | Why |
+|---|---|---|
+| Online feature store (same feature code as the trainer) | `src/stream/online_store.py`, `src/features.py::features_from_arrays` | Streaming features proven identical to batch (`tests/test_stream_parity.py`) |
+| Portable numpy-only model + endian-explicit file | `src/portable_model.py`, `models/hgb_portable.npz` | s390x is big-endian; no scikit-learn needed on the serving node |
+| Alert engine (NEW/ESCALATED/UNCHANGED, reason codes) | `src/stream/alerts.py` | Actionable, de-duplicated, explained alerts with a human-review flag |
+| Tamper-evident audit chain | `src/stream/audit.py` | Every official forecast is hash-chained with the model fingerprint |
+| Real-time API | `api.py` (`/api/v1/events`, `/live/*`, `/audit/*`, `/demo/replay/*`) | Existing `/predict` and `/forecast` endpoints are unchanged |
+| Live Operations page | `pages/1_Live_Operations.py` | Live map, alert queue, latency, audit status |
+| Benchmark harness | `bench/benchmark.py` | Run on x86 and on the IBM Z LPAR, compare honestly |
+| Deployment | `Dockerfile`, `Dockerfile.dashboard`, `docker-compose.yml`, `requirements-runtime.txt` | `linux/s390x` build (not yet built — see docs) |
+
+Full design, built-vs-designed table, measured numbers and demo script: **`docs/IBM_Z_ARCHITECTURE.md`**.
+
+```powershell
+python run_pipeline.py            # also exports models/hgb_portable.npz
+uvicorn api:app                   # terminal 1
+streamlit run dashboard.py        # terminal 2 → open "Live Operations" in the sidebar → ▶ Start
+python bench/benchmark.py         # latency / throughput on this machine
+python -m pytest -q tests         # 17 tests
+```
+
+## Architecture (v1 batch path, still available)
 
 ```text
 NCRP / bank / FI records
@@ -160,9 +188,9 @@ Then update the date range in `src/config.py` and retrain. In a real deployment,
 
 ## IBM Z / LinuxONE positioning
 
-The scoring model is a small tabular classifier with a compact feature vector, which makes a low-latency deployment story practical. For the Datathon presentation, the intended architecture is to ingest transactional/complaint events close to the secure banking or agency data environment, compute the feature vector, score the model, and emit ranked risk alerts to the dashboard/API layer.
-
-This ZIP **does not claim an IBM Z benchmark or IBM Z-native implementation**. That should be described as the deployment target/architecture direction unless you add an actual IBM Z deployment or benchmark.
+See `docs/IBM_Z_ARCHITECTURE.md`. In short: the serving node is numpy + pandas + FastAPI with an endian-explicit model
+artifact, and every claim in that document is labelled built / designed / not-yet-measured. **No benchmark in this
+repository was run on IBM Z hardware** until you run `bench/benchmark.py` there and add the result.
 
 ## Responsible-use guardrails
 

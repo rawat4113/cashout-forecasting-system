@@ -31,7 +31,7 @@
     "max_iter": 100,
     "max_depth": 5
   },
-  "val_pr_auc": 0.48779910009397787,
+  "val_pr_auc": 0.48726101258207266,
   "n_train_rows": 58435,
   "seed": 42
 }

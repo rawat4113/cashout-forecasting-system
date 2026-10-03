@@ -1,0 +1,21 @@
+# docker compose up --build     ->  API on :8000 (Swagger at /docs), Live Operations UI on :8501
+# On an s390x host Docker selects linux/s390x images automatically; no change needed.
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      AUDIT_LOG_PATH: /app/outputs/audit/audit_log.jsonl
+      # AUDIT_HMAC_KEY: set from a secret manager / HSM-backed store; never commit a real key
+    volumes:
+      - audit:/app/outputs/audit
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    ports: ["8501:8501"]
+    environment:
+      API_URL: http://api:8000
+    depends_on: [api]
+volumes:
+  audit:
