@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 import requests
 import streamlit as st
 
-API = os.environ.get("API_URL", "https://cashout-api.onrender.com")
+API = os.environ.get("API_URL", "https://cashout-forecasting-system.onrender.com")
 
 st.set_page_config(page_title="Live Operations", page_icon="📡", layout="wide")
 st.title("📡 Live Operations")
