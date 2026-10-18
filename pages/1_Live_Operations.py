@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 import requests
 import streamlit as st
 
-API = os.environ.get("API_URL", "http://127.0.0.1:8000")
+API = os.environ.get("API_URL", "https://cashout-api.onrender.com")
 
 st.set_page_config(page_title="Live Operations", page_icon="📡", layout="wide")
 st.title("📡 Live Operations")
@@ -103,4 +103,4 @@ def render():
 if refresh:
     st.fragment(run_every=2)(render)()
 else:
-    render()
+ render()
