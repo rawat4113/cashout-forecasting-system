@@ -1,7 +1,8 @@
 """FastAPI service for the cybercrime cash-out hotspot model.
 
 Start:
-    uvicorn api:app --reload
+   
+   \ --reload
 
 Swagger UI:
     http://127.0.0.1:8000/docs
